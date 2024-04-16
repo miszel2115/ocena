@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title>Jak twoja wiedza?</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <h1>Jak oceniasz swoją wiedze?</h1>
+
+    <input type="number" id="userInput" placeholder="Wpisz procentowo (0-100)">
+    <button onclick="checkGrade()">Sprawdź mnie</button>
+
+    <div id="result" 
+    style="display: none;">
+<h1 id="grade" class="grade">
+</h1>
+</div>
+
+<script>
+    function checkGrade() {
+        var userScore = 
+        document.getElementById('userInput').value;
+        var grade;
+        if (userScore == 100) {
+            grade = 6;
+        }   else if (userScore >= 90) {
+            grade = 5;
+        }   else if (userScore >= 75) {
+            grade = 4;
+        }   else if (userScore >= 50) {
+            grade = 3;
+        }   else if (userScore >= 30) {
+            grade = 2;
+        }   else{ 
+            grade = 1;
+        }
+document.getElementById('result').style.display = 'block';
+
+document.getElementById('grade').textContent = 'Twoja ocena to: ' + grade;
+    }
+    </script>
+</body>
+</html>
